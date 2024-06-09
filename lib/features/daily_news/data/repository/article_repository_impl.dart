@@ -6,7 +6,7 @@ import '../models/article.dart';
 class ArticleRepositoryImpl implements ArticleRepository{
   @override
   Future<DataState<List<ArticleModel>>> getNewsArticle() {
-
+    throw UnimplementedError();
   }
 
 }
