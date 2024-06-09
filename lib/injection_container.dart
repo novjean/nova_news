@@ -9,6 +9,7 @@ import 'features/daily_news/domain/usecases/get_article.dart';
 import 'features/daily_news/domain/usecases/get_saved_article.dart';
 import 'features/daily_news/domain/usecases/remove_article.dart';
 import 'features/daily_news/domain/usecases/save_article.dart';
+import 'features/daily_news/presentation/bloc/article/local/local_article_bloc.dart';
 import 'features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
 
 
@@ -52,9 +53,9 @@ Future<void> initializeDependencies() async {
           ()=> RemoteArticlesBloc(sl())
   );
 
-  // sl.registerFactory<LocalArticleBloc>(
-  //         ()=> LocalArticleBloc(sl(),sl(),sl())
-  // );
+  sl.registerFactory<LocalArticleBloc>(
+          ()=> LocalArticleBloc(sl(),sl(),sl())
+  );
 
 
 }

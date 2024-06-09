@@ -5,6 +5,7 @@ import 'package:clean_architecture/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'config/routes/app_routes.dart';
 import 'config/theme/app_themes.dart';
 
 Future<void> main() async {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme(),
+        onGenerateRoute: AppRoutes.onGenerateRoutes,
         home: const DailyNews(),
       ),
     );
