@@ -2,11 +2,11 @@ import 'package:clean_architecture/features/daily_news/domain/entities/article.d
 import 'package:equatable/equatable.dart';
 import 'package:dio/dio.dart';
 
-abstract class RemoteArticlesState extends Equatable{
+abstract class RemoteArticlesState extends Equatable {
   final List<ArticleEntity> ? articles;
   final DioError ? error;
 
-  RemoteArticlesState(this.articles, this.error);
+  const RemoteArticlesState({this.articles,this.error});
 
   @override
   List<Object> get props => [articles!, error!];
