@@ -4,14 +4,14 @@ import 'package:clean_architecture/features/daily_news/domain/repositories/artic
 
 import '../entities/article.dart';
 
-class GetArticleUseCase
-    implements UseCase<DataState<List<ArticleEntity>>, void> {
+class SaveArticleUseCase
+    implements UseCase<void, ArticleEntity> {
   final ArticleRepository _articleRepository;
 
-  GetArticleUseCase(this._articleRepository);
+  SaveArticleUseCase(this._articleRepository);
 
   @override
-  Future<DataState<List<ArticleEntity>>> call({void params}) {
-    return _articleRepository.getNewsArticle();
+  Future<void> call({ArticleEntity? params}) {
+    return _articleRepository.saveArticle(params!);
   }
 }
