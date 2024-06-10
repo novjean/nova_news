@@ -21,7 +21,7 @@ class DailyNews extends StatelessWidget {
   _buildAppbar(BuildContext context) {
     return AppBar(
       title: const Text(
-        'Daily News',
+        'Nova News',
         style: TextStyle(color: Colors.black),
       ),
       actions: [
