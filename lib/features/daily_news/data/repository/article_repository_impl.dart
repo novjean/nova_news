@@ -18,16 +18,16 @@ class ArticleRepositoryImpl implements ArticleRepository{
   @override
   Future<DataState<List<ArticleModel>>> getNewsArticle() async {
     try{
-      // final httpResponse = await _newsApiService.getNewsArticles(
-      //   apiKey: newsAPIKey,
-      //   country: countryQuery,
-      //   category: categoryQuery,
-      // );
-
-      final httpResponse = await _newsApiService.getEverything(
+      final httpResponse = await _newsApiService.getNewsArticles(
         apiKey: newsAPIKey,
-        q: "liverpool",
+        country: countryQuery,
+        category: categoryQuery,
       );
+
+      // final httpResponse = await _newsApiService.getEverything(
+      //   apiKey: newsAPIKey,
+      //   q: "liverpool",
+      // );
 
       if(httpResponse.response.statusCode == HttpStatus.ok){
         return DataSuccess(httpResponse.data);
